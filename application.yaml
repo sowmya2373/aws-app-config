@@ -8,9 +8,9 @@ spec:
   source:
     repoURL: https://github.com/sowmya2373/aws-app-config.git
     targetRevision: HEAD
-    path: .
+    path: dev
   destination: 
-    server: https://kubernetes.default.svc.cluster.local
+    server: https://kubernetes.default.svc
     namespace: myapp
   syncPolicy:
     syncOptions:
