@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: test-deployment
+  labels: 
+     app: test-api
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: myapp
-  replicas: 2
+      app: test-api
   template:
     metadata:
       labels:
-        app: myapp
+        app: test-api
     spec:
       containers:
-      - name: myapp
-      	image: app-api-test 
+      - name: test-container
+        image: app-api-test 
         imagePullPolicy: Never
-        #image: nanajanashia/argocd-app:1.2
         ports:
         - containerPort: 8080
-
-
